@@ -1,5 +1,5 @@
 from gym import register
-from agent import Predicate
+from agent.fologic.base import Predicate
 from agent.util import ind_dict2list, rotate_vec2d, concat_vkb
 from environment.box.boxworld_gen import color2index, all_colors
 import itertools as itt
