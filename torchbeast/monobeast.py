@@ -17,7 +17,7 @@ import torch
 from torch import multiprocessing as mp
 from torch import nn
 from torch.nn import functional as F
-from agent.neural_logic.nlmagent import NLMAgent
+from GTG.agent.neural_logic.nlmagent import NLMAgent
 from agent.neural_logic.kbmlp import KnowledgeBaseMLP
 from agent.geometric.gnnagent import GNNAgent
 from agent.baselines.cnnagent import CNNAgent
