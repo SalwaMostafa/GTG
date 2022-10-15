@@ -21,10 +21,10 @@ from agent.geometric.gnnagent import GNNAgent
 from agent.baselines.cnnagent import CNNAgent
 import pandas as pd
 
-from torchbeast.core import environment
-from torchbeast.core import file_writer
-from torchbeast.core import prof
-from torchbeast.core import vtrace
+from core import environment
+from core import file_writer
+from core import prof
+from core import vtrace
 
 from environment.minigrid import *
 from gym_minigrid.wrappers import FullyObsWrapper, ReseedWrapper
