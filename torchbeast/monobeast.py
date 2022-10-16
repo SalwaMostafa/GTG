@@ -646,6 +646,7 @@ def create_model(flags, env):
     elif flags.agent in ["GCN"]:
         model = GNNAgent(env.nb_all_entities, env.action_space.n, [env.obs_shape[0],env.obs_shape[1][-1], env.obs_shape[2][-1]],
                          type=flags.agent, net_code=flags.cnn_code, embedding_size=flags.embedding_size, mp_rounds=flags.mp_rounds)
+    print(model)
     return model
 
 
@@ -674,6 +675,8 @@ def test(flags):
     model.load_state_dict(checkpoint["model_state_dict"])
 
     observation = env.initial()
+    print("observation =", observation)
+    print("nullary_tensor =",observation["nullary_tensor"])
     returns = []
 
     total_steps = 0
@@ -686,6 +689,7 @@ def test(flags):
         if flags.mode == "test_render":
             env.gym_env.render()
         agent_outputs = model(observation)
+        print("agent_outputs =",agent_outputs)
         policy_outputs = agent_outputs
         observation = env.step(policy_outputs["action"])
 
