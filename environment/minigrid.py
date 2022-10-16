@@ -141,7 +141,8 @@ class DirectionWrapper(gym.core.ObservationWrapper):
         super().__init__(env)
         self.observation_space.spaces["direction"] = spaces.Discrete(4)
         self.type = type
-
+        self.observation_space.spaces["image"] = gym.spaces.Box(low=0,high=255,shape=(view_tile_size * view_size, view_tile_size * view_size, 3),dtype='uint8',)
+        
     def observation(self, obs):
         image = obs["image"]
         image[image[:,:,0]==10] = np.array([[10, 0, 0]])
