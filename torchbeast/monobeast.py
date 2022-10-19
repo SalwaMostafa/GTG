@@ -62,7 +62,7 @@ parser.add_argument("--savedir", default="~/logs/torchbeast",
                     help="Root dir where experiment data will be saved.")
 parser.add_argument("--num_actors", default=4, type=int, metavar="N",
                     help="Number of actors (default: 4).")
-parser.add_argument("--total_steps", default=10000000, type=int, metavar="T",
+parser.add_argument("--total_steps", default=10, type=int, metavar="T",
                     help="Total environment steps to train for.")
 parser.add_argument("--batch_size", default=4, type=int, metavar="B",
                     help="Learner batch size.")
@@ -76,7 +76,7 @@ parser.add_argument("--disable_cuda", action="store_true",
                     help="Disable CUDA.")
 
 # Test settings.
-parser.add_argument("--episodes", default=200, type=int)
+parser.add_argument("--episodes", default=1, type=int)
 parser.add_argument("--store_stats", action="store_true")
 
 # Loss settings.
